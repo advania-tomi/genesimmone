@@ -2,6 +2,8 @@ const Router = require('koa-router')
 const router = new Router()
 const {authorizeURI, getAuthToken, getMe} = require('../helpers')
 const options = require('../authOptions.json').genesys
+options.key = process.env.clientID
+options.secret = process.env.clientSECRET
 
 router.get('/', async (ctx, next) => {
   if (ctx.session.isNew) {
