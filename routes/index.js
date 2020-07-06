@@ -4,6 +4,9 @@ const {authorizeURI, getAuthToken, getMe} = require('../helpers')
 const options = require('../authOptions.json').genesys
 options.key = process.env.clientID
 options.secret = process.env.clientSECRET
+if (process.env.env === 'production') {
+  options.redirect_uri =  "https://genesimmone.azurewebsites.net/connect/genesys/callback"
+}
 
 router.get('/', async (ctx, next) => {
   if (ctx.session.isNew) {
