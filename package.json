@@ -1,0 +1,33 @@
+{
+  "name": "genesimmone",
+  "version": "1.0.0",
+  "description": "Koa web server with oAuth",
+  "main": "app.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-qs": "^3.0.0",
+    "koa-router": "^9.1.0",
+    "koa-session": "^6.0.0",
+    "querystring": "^0.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/advania-tomi/genesimmone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/advania-tomi/genesimmone/issues"
+  },
+  "homepage": "https://github.com/advania-tomi/genesimmone#readme"
+}
