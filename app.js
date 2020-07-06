@@ -1,5 +1,5 @@
 
-const PORT = process.env.KOA_PORT || 4000
+const PORT = process.env.PORT || 4000
 
 const Koa = require('koa')
 const session = require('koa-session')
