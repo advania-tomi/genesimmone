@@ -4,7 +4,8 @@
     "access_url": "https://login.mypurecloud.de/oauth/token",
     "oauth": 2,
     "scope_delimiter": " ",
-    "redirect_uri": "http://localhost:4000/connect/genesys/callback",
+    "redirect_uri": "https://genesimmone.azurewebsites.net/callback",
+    "devredirect_uri": "http://localhost:4000/callback",
     "callback": "/hello",
     "me_uri": "https://api.mypurecloud.de/api/v2/users/me"
   }
