@@ -34,9 +34,8 @@ const getQueueStatus = async (ctx) => {
   const uri =  advania.platformAPI + '/api/v2/routing/queues/'+ ctx.query.q + '/users/?presence=On%20Queue'
   const opts = {headers:{Authorization: `Bearer ${token}`, 'content-type':'application/json' }}
   const res = await axios.get(uri,opts)
-  console.log(res.data)
-  const loggedInUsers = { Logged_in_Users: res.data.total}
-  ctx.body = loggedInUsers
+  const OnQueueUsers = { OnQueueUsers: res.data.total}
+  ctx.body = OnQueueUsers
 }
 
 const getQueues = async (ctx) => {
