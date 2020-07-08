@@ -19,7 +19,6 @@ router.get('/user', async (ctx, next) => {
   if (ctx.session.isNew) {
     ctx.redirect(authorizeURI(options))
   } else {
-    console.log(ctx.session)
     ctx.body = JSON.stringify(ctx.session.user, null, 2)
   }
 })
@@ -31,7 +30,6 @@ router.get('/callback', async (ctx, next) => {
     try {
       const response = await getAuthToken(options, ctx)
       ctx.authData = response.data
-      console.log(ctx.authData)
     }
     catch (err) {
       console.log('Failed to get token: ', err)
@@ -40,7 +38,6 @@ router.get('/callback', async (ctx, next) => {
     try {
       const user = await getMe(options, ctx)
       ctx.session.user = user.data
-      console.log(ctx.session)
       ctx.redirect('/user')
     }
     catch (err) {
@@ -51,9 +48,13 @@ router.get('/callback', async (ctx, next) => {
 
 
 router.get('/views', async (ctx, next) => {
-  let n = ctx.session.views || 0;
-  ctx.session.views = ++n;
-  ctx.body = ctx.session.user.name + ' ' + n + ' views';
+  if (ctx.session.isNew) {
+    ctx.redirect(authorizeURI(options))
+  } else {
+    let n = ctx.session.views || 0;
+    ctx.session.views = ++n;
+    ctx.body = ctx.session.user.name + ' ' + n + ' views'
+  }
 })
 
 module.exports = router 

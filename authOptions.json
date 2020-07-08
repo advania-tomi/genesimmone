@@ -8,5 +8,10 @@
     "devredirect_uri": "http://localhost:4000/callback",
     "callback": "/hello",
     "me_uri": "https://api.mypurecloud.de/api/v2/users/me"
+  },
+  "advania": {
+    "platformAPI": "https://api.mypurecloud.de",
+    "authorize_url": "https://login.mypurecloud.de/oauth/authorize",
+    "access_url": "https://login.mypurecloud.de/oauth/token"
   }
 }

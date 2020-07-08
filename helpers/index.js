@@ -1,9 +1,12 @@
-const axios = require('axios');
+const axios = require('axios')
 const qs = require('querystring')
 const getcodeAuthHeader = (options) => {
   return 'Basic ' + Buffer.from(options.key + ":" + options.secret, 'utf-8').toString('base64')
 }
 
+const getBase64Header = (options) => {
+  return 'Basic ' + Buffer.from(options.key + ":" + options.secret, 'utf-8').toString('base64')
+}
 const ondev = (options) => {
   if (process.env.env !== 'production') {
     options.redirect_uri =  options.devredirect_uri
@@ -38,5 +41,6 @@ const getMe = (options, ctx) => {
 module.exports = {
   authorizeURI,
   getAuthToken,
-  getMe
+  getMe,
+  getBase64Header
 }
