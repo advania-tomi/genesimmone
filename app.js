@@ -10,9 +10,9 @@ const mount = require('koa-mount')
 const app = new Koa()
 app.keys = ['SuperSecretYouKnowHa12Grrr']
 
-app.use(mount('/www', serve('frontend/dist')))
-app.use(mount('/js', serve('frontend/dist/js')))
-app.use(mount('/css', serve('frontend/dist/css')))
+app.use(mount('/www', serve('frontend/files')))
+app.use(mount('/js', serve('frontend/files/js')))
+app.use(mount('/css', serve('frontend/files/css')))
 app.use(session(app))
 app.use(parser())
 require('./routes')(app)
