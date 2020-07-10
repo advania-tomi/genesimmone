@@ -1,3 +1,5 @@
+
+const neDB = require('./nedb').data
 const axios = require('axios')
 const qs = require('querystring')
 const getcodeAuthHeader = (options) => {
@@ -8,9 +10,11 @@ const getBase64Header = (options) => {
   return 'Basic ' + Buffer.from(options.key + ":" + options.secret, 'utf-8').toString('base64')
 }
 const ondev = (options) => {
+  console.log('Options before: ', options)
   if (process.env.env !== 'production') {
     options.redirect_uri =  options.devredirect_uri
   }
+  console.log('Options after: ',options)
   return options
 }
 
@@ -38,9 +42,21 @@ const getMe = (options, ctx) => {
 
 }
 
+const testInsertneDB = async (ctx) => {
+  console.log(await neDB.asyncInsert({queue: '7986b8f2-6035-4280-8adf-40244ce4ba10', name:'test'}))
+  ctx.body = 'Insert done'
+}
+const testFindneDB = async (ctx) => {
+  const respo = await neDB.asyncFind({},[['limit',100],['sort', -1]])
+  console.log(respo)
+  ctx.body = respo
+}
+
 module.exports = {
   authorizeURI,
   getAuthToken,
   getMe,
-  getBase64Header
+  getBase64Header,
+  testInsertneDB,
+  testFindneDB
 }

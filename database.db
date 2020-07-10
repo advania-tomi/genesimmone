@@ -1,0 +1,5 @@
+{"queue":"7986b8f4-6035-4280-8adf-40244ce4ba10","name":"testi3","enabled":false,"_id":"JCpK6TAoPXBR5jR6"}
+{"queue":"7986b8f3-6035-4280-8adf-40244ce4ba10","name":"testi2","enabled":false,"_id":"NuDZNukzbv8k8mpo"}
+{"queue":"7986b8f5-6035-4280-8adf-40244ce4ba10","name":"testi5","enabled":false,"_id":"TCDfzBtf4yfZNHZg"}
+{"queue":"7986b8f2-6035-4280-8adf-40244ce4ba10","name":"testi1","enabled":false,"_id":"XCayEJ5G0bNez94i"}
+{"$$indexCreated":{"fieldName":"queue","unique":true,"sparse":false}}

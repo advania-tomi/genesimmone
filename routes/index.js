@@ -12,7 +12,7 @@ const routes = fs
     )
     .map(file => require(path.join(__dirname, file)))
 
-module.exports = function(app) {
+module.exports = (app) =>  {
     for (var router of routes) {
         app.use(router.routes())
     }
